@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmed Mahfouz</title>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+html, body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:15px;
+}
+
+.card{
+    width:min(100%, 380px);
+    background:#1e293b;
+    border-radius:25px;
+    padding:30px 20px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+    border:1px solid rgba(56,189,248,.2);
+}
+
+.profile-img{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #38bdf8;
+    margin-bottom:15px;
+}
+
+h1{
+    font-size:26px;
+    margin-bottom:8px;
+}
+
+.job{
+    color:#94a3b8;
+    margin-bottom:20px;
+    font-size:16px;
+}
+
+.contact{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.contact a{
+    text-decoration:none;
+    color:white;
+    background:#334155;
+    padding:14px 16px;
+    border-radius:12px;
+    transition:.3s;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    font-size:15px;
+    font-weight:bold;
+}
+
+.contact a:hover{
+    background:#38bdf8;
+    transform:translateY(-2px);
+}
+
+.contact a i{
+    font-size:16px;
+}
+
+.footer{
+    margin-top:18px;
+    color:#94a3b8;
+    font-size:13px;
+}
+
+/* Responsive tweaks */
+@media(max-width:480px){
+    .card{
+        padding:25px 15px;
+    }
+
+    h1{
+        font-size:22px;
+    }
+
+    .job{
+        font-size:14px;
+    }
+
+    .profile-img{
+        width:110px;
+        height:110px;
+    }
+
+    .contact a{
+        font-size:14px;
+        padding:12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <img src="z.jpg" alt="Ahmed Mahfouz" class="profile-img">
+
+    <h1>Ahmed Mahfouz</h1>
+
+    <p class="job">Network Engineer</p>
+
+    <div class="contact">
+
+        <a href="tel:+201108511453">
+            <i class="fa-solid fa-phone"></i>
+            <span>+20 1108511453</span>
+        </a>
+
+        <a href="https://wa.me/201108511453" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>WhatsApp</span>
+        </a>
+
+        <a href="mailto:ahmedmahfouz@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+            <span>ahmedmahfouz@gmail.com</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/ahmedmahfouz680/" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+            <span>LinkedIn</span>
+        </a>
+
+        <a href="https://ahmedmahfouz680.github.io/Portfolio/" target="_blank">
+            <i class="fa-solid fa-globe"></i>
+            <span>Portfolio</span>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
