@@ -15,18 +15,14 @@
       font-family: 'Inter', sans-serif;
     }
 
-    html, body {
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-    }
-
     body {
       background: linear-gradient(135deg, #0f172a, #1e293b);
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      min-height: 100vh;
+      min-height: 100dvh;
+      padding: 30px 15px;
     }
 
     .card {
@@ -71,7 +67,6 @@
       margin-bottom: 25px;
     }
 
-    /* Action Links List */
     .links-container {
       display: flex;
       flex-direction: column;
@@ -117,7 +112,7 @@
     <p class="title">Network Engineer</p>
 
     <div class="links-container">
-      <a href="tel:+20 1108511453" class="link-btn">
+      <a href="tel:+201108511453" class="link-btn">
         <i class="fa-solid fa-phone"></i>
         <span>Phone</span>
       </a>
