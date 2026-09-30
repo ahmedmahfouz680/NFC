@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="ltr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Ahmed Mahfouz</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,11 +12,11 @@
   <style>
     :root {
       --bg-color: #070b13;
-      --card-bg: rgba(15, 23, 42, 0.82);
+      --card-bg: rgba(15, 23, 42, 0.85);
       --card-border: rgba(255, 255, 255, 0.08);
-      --card-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75), 0 0 35px rgba(56, 189, 248, 0.07);
-      --btn-bg: rgba(255, 255, 255, 0.038);
-      --btn-bg-hover: rgba(255, 255, 255, 0.085);
+      --card-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7), 0 0 30px rgba(56, 189, 248, 0.08);
+      --btn-bg: rgba(255, 255, 255, 0.04);
+      --btn-bg-hover: rgba(255, 255, 255, 0.09);
       --btn-border: rgba(255, 255, 255, 0.09);
       --btn-border-hover: rgba(56, 189, 248, 0.45);
       --text-title: #ffffff;
@@ -35,27 +35,27 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: var(--bg-color);
       background-image: 
-        radial-gradient(circle at 18% 18%, rgba(56, 189, 248, 0.16) 0px, transparent 45%),
-        radial-gradient(circle at 82% 22%, rgba(99, 102, 241, 0.15) 0px, transparent 48%),
-        radial-gradient(circle at 50% 88%, rgba(14, 165, 233, 0.1) 0px, transparent 50%);
+        radial-gradient(circle at 18% 18%, rgba(56, 189, 248, 0.15) 0px, transparent 45%),
+        radial-gradient(circle at 82% 22%, rgba(99, 102, 241, 0.14) 0px, transparent 48%),
+        radial-gradient(circle at 50% 88%, rgba(14, 165, 233, 0.08) 0px, transparent 50%);
       background-attachment: fixed;
       color: #fff;
-      min-height: 100vh;
+      min-height: 100dvh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 32px 18px;
+      padding: clamp(16px, 4vh, 32px) 16px;
     }
 
     .profile-card {
       width: 100%;
-      max-width: 410px;
+      max-width: 400px;
       background: var(--card-bg);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--card-border);
-      border-radius: 26px;
-      padding: 32px 24px 28px;
+      border-radius: 24px;
+      padding: clamp(20px, 5vh, 32px) clamp(16px, 5vw, 24px);
       box-shadow: var(--card-shadow);
       display: flex;
       flex-direction: column;
@@ -66,27 +66,29 @@
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
     }
 
-    .profile-card:hover {
-      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 45px rgba(56, 189, 248, 0.12);
+    @media (hover: hover) {
+      .profile-card:hover {
+        box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 45px rgba(56, 189, 248, 0.12);
+      }
     }
 
     .avatar-wrapper {
       position: relative;
-      /* تم تكبير حجم الصورة من 86px إلى 124px */
-      width: 124px;
-      height: 124px;
+      width: clamp(96px, 25vw, 120px);
+      height: clamp(96px, 25vw, 120px);
       border-radius: 50%;
-      padding: 3.5px;
+      padding: 3px;
       background: linear-gradient(135deg, #38bdf8 0%, #6366f1 50%, #a855f7 100%);
-      box-shadow: 0 10px 25px -4px rgba(56, 189, 248, 0.4), 0 0 20px rgba(99, 102, 241, 0.3);
-      margin-bottom: 16px;
+      box-shadow: 0 8px 20px -4px rgba(56, 189, 248, 0.35), 0 0 18px rgba(99, 102, 241, 0.25);
+      margin-bottom: clamp(12px, 2.5vh, 16px);
       flex-shrink: 0;
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .avatar-wrapper:hover {
-      transform: scale(1.04);
-      box-shadow: 0 12px 30px -4px rgba(56, 189, 248, 0.55), 0 0 28px rgba(168, 85, 247, 0.4);
+    @media (hover: hover) {
+      .avatar-wrapper:hover {
+        transform: scale(1.04);
+      }
     }
 
     .avatar-img {
@@ -99,20 +101,20 @@
     }
 
     .user-name {
-      font-size: 1.45rem;
+      font-size: clamp(1.25rem, 4.5vw, 1.45rem);
       font-weight: 700;
-      letter-spacing: -0.025em;
+      letter-spacing: -0.02em;
       color: var(--text-title);
-      line-height: 1.25;
-      margin-bottom: 5px;
+      line-height: 1.2;
+      margin-bottom: 4px;
     }
 
     .user-role {
-      font-size: 0.92rem;
+      font-size: clamp(0.85rem, 3vw, 0.92rem);
       font-weight: 600;
       color: var(--text-subtitle);
-      letter-spacing: 0.02em;
-      margin-bottom: 22px;
+      letter-spacing: 0.01em;
+      margin-bottom: clamp(16px, 3vh, 22px);
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -121,8 +123,8 @@
     .user-role::before {
       content: '';
       display: inline-block;
-      width: 7px;
-      height: 7px;
+      width: 6px;
+      height: 6px;
       background: #22c55e;
       border-radius: 50%;
       box-shadow: 0 0 8px #22c55e;
@@ -132,57 +134,59 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 11px;
+      gap: clamp(9px, 1.8vh, 12px);
     }
 
     .action-link {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
       width: 100%;
-      height: 48px;
-      padding: 0 18px;
+      min-height: 46px;
+      padding: 0 16px;
       background: var(--btn-bg);
       border: 1px solid var(--btn-border);
-      border-radius: 14px;
+      border-radius: 12px;
       color: var(--text-btn);
-      font-size: 0.92rem;
+      font-size: clamp(0.85rem, 3vw, 0.92rem);
       font-weight: 600;
       text-decoration: none;
-      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
       cursor: pointer;
       user-select: none;
     }
 
-    .action-link:hover {
-      background: var(--btn-bg-hover);
-      border-color: var(--btn-border-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px -2px rgba(0, 0, 0, 0.45);
+    @media (hover: hover) {
+      .action-link:hover {
+        background: var(--btn-bg-hover);
+        border-color: var(--btn-border-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px -2px rgba(0, 0, 0, 0.45);
+      }
+
+      .action-link:hover .icon {
+        transform: scale(1.12);
+      }
     }
 
     .action-link:active {
       transform: scale(0.98);
+      background: var(--btn-bg-hover);
     }
 
     .icon {
-      width: 20px;
-      height: 20px;
+      width: 19px;
+      height: 19px;
       flex-shrink: 0;
-      transition: transform 0.22s ease;
-    }
-
-    .action-link:hover .icon {
-      transform: scale(1.15);
+      transition: transform 0.2s ease;
     }
 
     .icon-phone { color: #38bdf8; }
     .icon-wa { color: #22c55e; }
     .icon-email { color: #818cf8; }
     .icon-linkedin { color: #60a5fa; }
-    .icon-github { color: #cbd5e1; }
-    .icon-cv { color: #f43f5e; }
+    .icon-portfolio { color: #f43f5e; }
   </style>
 </head>
 <body>
@@ -194,7 +198,7 @@
         src="z.jpg"
         alt="Ahmed Mahfouz"
         class="avatar-img"
-        onerror="this.src='https://placehold.co/300x300/0b1120/38bdf8?text=Ahmed+M.'"
+        onerror="this.onerror=null; this.src='https://placehold.co/300x300/0b1120/38bdf8?text=Ahmed+M.';"
       />
     </div>
 
