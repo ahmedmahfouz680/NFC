@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahmed Mahfouz</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-color: #070b13;
+      --card-bg: rgba(15, 23, 42, 0.82);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75), 0 0 35px rgba(56, 189, 248, 0.07);
+      --btn-bg: rgba(255, 255, 255, 0.038);
+      --btn-bg-hover: rgba(255, 255, 255, 0.085);
+      --btn-border: rgba(255, 255, 255, 0.09);
+      --btn-border-hover: rgba(56, 189, 248, 0.45);
+      --text-title: #ffffff;
+      --text-subtitle: #38bdf8;
+      --text-btn: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-color);
+      background-image: 
+        radial-gradient(circle at 18% 18%, rgba(56, 189, 248, 0.16) 0px, transparent 45%),
+        radial-gradient(circle at 82% 22%, rgba(99, 102, 241, 0.15) 0px, transparent 48%),
+        radial-gradient(circle at 50% 88%, rgba(14, 165, 233, 0.1) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 18px;
+    }
+
+    .profile-card {
+      width: 100%;
+      max-width: 410px;
+      background: var(--card-bg);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--card-border);
+      border-radius: 26px;
+      padding: 32px 24px 28px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    }
+
+    .profile-card:hover {
+      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 45px rgba(56, 189, 248, 0.12);
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      /* تم تكبير حجم الصورة من 86px إلى 124px */
+      width: 124px;
+      height: 124px;
+      border-radius: 50%;
+      padding: 3.5px;
+      background: linear-gradient(135deg, #38bdf8 0%, #6366f1 50%, #a855f7 100%);
+      box-shadow: 0 10px 25px -4px rgba(56, 189, 248, 0.4), 0 0 20px rgba(99, 102, 241, 0.3);
+      margin-bottom: 16px;
+      flex-shrink: 0;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+    }
+
+    .avatar-wrapper:hover {
+      transform: scale(1.04);
+      box-shadow: 0 12px 30px -4px rgba(56, 189, 248, 0.55), 0 0 28px rgba(168, 85, 247, 0.4);
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      background-color: #0b1120;
+      display: block;
+    }
+
+    .user-name {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text-title);
+      line-height: 1.25;
+      margin-bottom: 5px;
+    }
+
+    .user-role {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-subtitle);
+      letter-spacing: 0.02em;
+      margin-bottom: 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .user-role::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #22c55e;
+    }
+
+    .links-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .action-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      height: 48px;
+      padding: 0 18px;
+      background: var(--btn-bg);
+      border: 1px solid var(--btn-border);
+      border-radius: 14px;
+      color: var(--text-btn);
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .action-link:hover {
+      background: var(--btn-bg-hover);
+      border-color: var(--btn-border-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px -2px rgba(0, 0, 0, 0.45);
+    }
+
+    .action-link:active {
+      transform: scale(0.98);
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      transition: transform 0.22s ease;
+    }
+
+    .action-link:hover .icon {
+      transform: scale(1.15);
+    }
+
+    .icon-phone { color: #38bdf8; }
+    .icon-wa { color: #22c55e; }
+    .icon-email { color: #818cf8; }
+    .icon-linkedin { color: #60a5fa; }
+    .icon-github { color: #cbd5e1; }
+    .icon-cv { color: #f43f5e; }
+  </style>
+</head>
+<body>
+
+  <main class="profile-card">
+
+    <div class="avatar-wrapper">
+      <img
+        src="z.jpg"
+        alt="Ahmed Mahfouz"
+        class="avatar-img"
+        onerror="this.src='https://placehold.co/300x300/0b1120/38bdf8?text=Ahmed+M.'"
+      />
+    </div>
+
+    <h1 class="user-name">Ahmed Mahfouz</h1>
+    <p class="user-role">Network Engineer</p>
+
+    <div class="links-list">
+
+      <a href="tel:+201108511453" class="action-link" aria-label="Call Mobile">
+        <svg class="icon icon-phone" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+        </svg>
+        <span>+20 1108511453</span>
+      </a>
+
+      <a href="https://wa.me/201108511453" target="_blank" rel="noopener noreferrer" class="action-link" aria-label="Open WhatsApp">
+        <svg class="icon icon-wa" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 01-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 012.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.51-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.66.31-.23.25-.88.86-.88 2.1s.9 2.43 1.02 2.6c.12.17 1.77 2.7 4.28 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.47-.31z"/>
+        </svg>
+        <span>WhatsApp</span>
+      </a>
+
+      <a href="mailto:ahmedmahfouz680@gmail.com" class="action-link" aria-label="Send Email">
+        <svg class="icon icon-email" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+        <span>E-mail</span>
+      </a>
+
+      <a href="https://www.linkedin.com/in/ahmedmahfouz680" target="_blank" rel="noopener noreferrer" class="action-link" aria-label="LinkedIn Profile">
+        <svg class="icon icon-linkedin" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+        <span>LinkedIn</span>
+      </a>
+
+      <a href="https://ahmedmahfouz680.github.io/Portfolio/" target="_blank" rel="noopener noreferrer" class="action-link" aria-label="Open Portfolio">
+        <svg class="icon icon-portfolio" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+        <span>Portfolio</span>
+      </a>
+
+    </div>
+
+  </main>
+
+</body>
+</html>
